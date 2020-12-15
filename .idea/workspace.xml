@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bc79b179-02ca-4015-884d-1aecc5ebd9e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/UPGRADE_GUIDE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/dist/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/dist/axios.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/dist/axios.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/dist/axios.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/adapters/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/adapters/http.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/adapters/xhr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/cancel/Cancel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/cancel/CancelToken.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/cancel/isCancel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/Axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/InterceptorManager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/buildFullPath.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/createError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/dispatchRequest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/enhanceError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/mergeConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/settle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/transformData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/defaults.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/bind.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/buildURL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/combineURLs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/cookies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/deprecatedMethod.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/isAbsoluteURL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/isURLSameOrigin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/normalizeHeaderName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/parseHeaders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/spread.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/http.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/https.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/client/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/activity.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/activity.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/activities/v1.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/activities/v1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/activities/v2.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/activities/v2.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lSqeQjZG5nXPyrcWAFkLrZQ1XW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc79b179-02ca-4015-884d-1aecc5ebd9e8" name="Default Changelist" comment="" />
+      <created>1607600936039</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607600936039</updated>
+      <workItem from="1607600938685" duration="4154000" />
+      <workItem from="1607795681198" duration="6310000" />
+      <workItem from="1607934343429" duration="11400000" />
+      <workItem from="1607948762055" duration="4615000" />
+      <workItem from="1608019260731" duration="4413000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

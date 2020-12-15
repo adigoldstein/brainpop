@@ -66,7 +66,7 @@ Note: The time this assignment will take to complete will differ based on experi
 
 # APIs
 
-- [Get activities - V1](http://localhost:3000/activities/v1)
+  - [Get activities - V1](http://localhost:3000/activities/v1)
 - [Get activities - V2](http://localhost:3000/activities/v2)
 
 # Screenshots

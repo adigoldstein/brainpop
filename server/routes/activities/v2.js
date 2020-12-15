@@ -8,7 +8,7 @@ module.exports = [{
       d_created: '1569753926',
       topic_data: {
         name: 'cells',
-        icon_path: '/assets/topics/cells.png'
+        icon_path: '/assets/assets/cells.png'
       },
       comment: 'Fantastic'
     }]
@@ -23,7 +23,7 @@ module.exports = [{
       d_created: '1569773926',
       topic_data: {
         name: 'dogs',
-        icon_path: '/assets/topics/dogs.png'
+        icon_path: '/assets/assets/dogs.png'
       },
       comment: 'Excellent'
     }]
@@ -38,7 +38,7 @@ module.exports = [{
       d_created: '1567095526',
       topic_data: {
         name: 'camouflage',
-        icon_path: '/assets/topics/camouflage.png'
+        icon_path: '/assets/assets/camouflage.png'
       },
       comment: 'Not enough'
     }]
@@ -53,7 +53,7 @@ module.exports = [{
       d_created: '1567015526',
       topic_data: {
         name: 'camouflage',
-        icon_path: '/assets/topics/camouflage.png'
+        icon_path: '/assets/assets/camouflage.png'
       },
       comment: 'Good work'
     }]
@@ -68,7 +68,7 @@ module.exports = [{
       d_created: '1572179526',
       topic_data: {
         name: 'ada lovelace',
-        icon_path: '/assets/topics/adalovelace.png'
+        icon_path: '/assets/assets/adalovelace.png'
       },
       comment: 'Redo please'
     }]
@@ -83,7 +83,7 @@ module.exports = [{
         d_created: '1567085526',
         topic_data: {
           name: 'dogs',
-          icon_path: '/assets/topics/dogs.png'
+          icon_path: '/assets/assets/dogs.png'
         },
         comment: 'What were you thinking?!'
       },
@@ -95,7 +95,7 @@ module.exports = [{
         d_created: '1567015526',
         topic_data: {
           name: 'ada lovelace',
-          icon_path: '/assets/topics/adalovelace.png'
+          icon_path: '/assets/assets/adalovelace.png'
         },
         comment: 'Amazing work'
       },
@@ -107,7 +107,7 @@ module.exports = [{
         d_created: '1567091416',
         topic_data: {
           name: 'cells',
-          icon_path: '/assets/topics/cells.png'
+          icon_path: '/assets/assets/cells.png'
         },
         comment: 'Please fix'
       }
@@ -123,7 +123,7 @@ module.exports = [{
         d_created: '1572279946',
         topic_data: {
           name: 'dna',
-          icon_path: '/assets/topics/dna.png'
+          icon_path: '/assets/assets/dna.png'
         },
         comment: 'Great job!'
       },
@@ -135,7 +135,7 @@ module.exports = [{
         d_created: '1572279526',
         topic_data: {
           name: 'ada lovelace',
-          icon_path: '/assets/topics/adalovelace.png'
+          icon_path: '/assets/assets/adalovelace.png'
         },
         comment: 'Perfect'
       }
@@ -151,7 +151,7 @@ module.exports = [{
       d_created: '1572271526',
       topic_data: {
         name: 'ada lovelace',
-        icon_path: '/assets/topics/adalovelace.png'
+        icon_path: '/assets/assets/adalovelace.png'
       },
       comment: 'Very good job!'
     }]
@@ -166,7 +166,7 @@ module.exports = [{
       d_created: '1572282526',
       topic_data: {
         name: 'camouflage',
-        icon_path: '/assets/topics/camouflage.png'
+        icon_path: '/assets/assets/camouflage.png'
       },
       comment: 'Please review your work'
     }]
