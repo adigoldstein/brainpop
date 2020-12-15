@@ -3,9 +3,10 @@
     <b-container>
       <b-row>
         <b-col>
-          <p>Activities</p>
+          <h1 class="main-header">Activities View</h1>
+          <h2 class="secondery-header">Timeline</h2>
           <b-form-input placeholder="Filter results"
-                        class="filter-input mb-3" type="text" v-on:keyup="onInputChane">
+                        class="filter-input" type="text" v-on:keyup="onInputChane">
           </b-form-input>
           <section v-if="filteredActivities.length">
             <div  v-for="(activity,index) in filteredActivities"
@@ -84,8 +85,18 @@ export default {
 </script>
 
 <style scoped>
+
+.main-header {
+  margin-top: 40px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+.secondery-header {
+  margin-top: 25px;
+}
 .filter-input {
   width: 25%;
+  margin-bottom: 15px;
 }
 .activity {
   border: 2px solid #f8ebc6;
