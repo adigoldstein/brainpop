@@ -36,7 +36,6 @@ export default {
   name: 'activity',
   props: ['activity'],
   created() {
-    console.log(this.$props.activity);
   },
   methods: {
     isShowScore(resourceType) {
