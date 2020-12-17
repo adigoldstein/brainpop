@@ -21,7 +21,7 @@
         <span class="name">
           {{
             `${this.activity.topic_data.name}
-${this.activity.resource_type.replace(/_/g, ' ')}`
+             ${this.activity.resource_type.replace(/_/g, ' ')}`
           }}
        </span>
         <span class="date">
@@ -68,7 +68,7 @@ export default {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto; /* Enable scroll if needed */
+  overflow: auto;
 
   display: flex;
   justify-content: center;

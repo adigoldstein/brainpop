@@ -85,6 +85,10 @@
 
 
               </div>
+              <span class="no-results" v-if="!filteredActivities.length">
+                No results <b-icon icon="emoji-frown"></b-icon>
+              </span>
+
               <div class="item-wrapper" v-for="(activity,index) in filteredActivities"
                    v-bind:key="activity.id">
               <span class="month" v-if=" index === 0 ||
@@ -118,7 +122,7 @@
 </template>
 
 <script>
-import Activity from './activity.vue';
+import Activity from './Activity.vue';
 
 export default {
   name: 'home',
@@ -159,7 +163,7 @@ export default {
     onShowMore() {
       this.activitiesToShow += 10;
     },
-    parseData(data) {
+    reformatData(data) {
       const parsedArray = [];
       // eslint-disable-next-line no-restricted-syntax
       for (const item of data) {
@@ -183,7 +187,7 @@ export default {
         this.isLoading = false;
         if (Array.isArray(res.data[0].activities)) {
           // V2 endpoint structure support
-          this.activities = this.parseData(res.data);
+          this.activities = this.reformatData(res.data);
         } else {
           this.activities = res.data;
         }
@@ -233,6 +237,13 @@ export default {
 .filter-btn {
   margin-right: 10px;
 
+}
+
+.no-results {
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
 }
 
 .month {
