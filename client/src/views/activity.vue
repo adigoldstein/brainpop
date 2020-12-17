@@ -25,9 +25,12 @@ ${this.activity.resource_type.replace(/_/g, ' ')}`
         <span class="no-bold">Score:</span>
         {{ this.activity.score }}/{{ this.activity.possible_score }}
       </span>
-      <span class="view-work">    <b-icon-eye></b-icon-eye>
-View work</span>
+      <span class="view-work" v-on:click="onViwWorkClickHandler">
+        <b-icon-eye></b-icon-eye>View work
+      </span>
     </div>
+    <b-icon class="delete-icon" @click="deleteActivityClickHandler()" icon="trash"></b-icon>
+
   </div>
 </template>
 
@@ -41,6 +44,12 @@ export default {
     isShowScore(resourceType) {
       return resourceType === 'quiz' || resourceType === 'easy_quiz' || resourceType === 'challenge';
     },
+    onViwWorkClickHandler() {
+      this.$router.push({ name: 'zoom', params: { data: this.activity } });
+    },
+    deleteActivityClickHandler() {
+      this.$emit('deleteActivity', this.activity.id);
+    },
   },
 };
 </script>
@@ -51,6 +60,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .info {
@@ -109,6 +119,17 @@ export default {
 
 .view-work {
   margin-left: 10px;
+}
+
+.delete-icon {
+  position: absolute;
+  bottom: -6px;
+  right: 1px;
+  cursor: pointer;
+  display: none!important;
+}
+.activity:hover .delete-icon {
+  display: block!important;
 }
 
 </style>

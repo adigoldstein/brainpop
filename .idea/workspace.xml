@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc79b179-02ca-4015-884d-1aecc5ebd9e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/views/Zoom.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/activity.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/activity.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +60,7 @@
       <workItem from="1607795681198" duration="6310000" />
       <workItem from="1607934343429" duration="11400000" />
       <workItem from="1607948762055" duration="4615000" />
-      <workItem from="1608019260731" duration="27772000" />
+      <workItem from="1608019260731" duration="40044000" />
     </task>
     <task id="LOCAL-00001" summary="Still in progress">
       <created>1608035289575</created>
@@ -87,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608123446096</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="before modal">
+      <created>1608191033336</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608191033336</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +107,7 @@
     <MESSAGE value="Still in progress" />
     <MESSAGE value="Done for now" />
     <MESSAGE value="month separation" />
-    <option name="LAST_COMMIT_MESSAGE" value="month separation" />
+    <MESSAGE value="before modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="before modal" />
   </component>
 </project>

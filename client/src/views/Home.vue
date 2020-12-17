@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <router-view></router-view>
     <b-container>
       <b-row>
         <b-col>
@@ -10,9 +11,9 @@
           <div v-else>
             <h1 class="main-header">Activities View</h1>
             <h2 class="secondery-header">Timeline</h2>
-            <section v-if="filteredActivities.length">
+            <section>
 
-              <b-form-input placeholder="Filter results"
+              <b-form-input v-model="filterInput" placeholder="Search Timeline"
                             class="filter-input" type="text" v-on:keyup="onInputChane">
               </b-form-input>
 
@@ -97,7 +98,7 @@
                 }}</span>
 
                 <div class="activity" v-if="index < activitiesToShow">
-                  <Activity v-bind:activity="activity"/>
+                  <Activity v-bind:activity="activity" @deleteActivity="deleteActivity($event)"/>
                 </div>
                 <span class="load-more"
                       v-if="index === activitiesToShow - 1 && index < filteredActivities.length"
@@ -113,12 +114,10 @@
         </b-col>
       </b-row>
     </b-container>
-
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import Activity from './activity.vue';
 
 export default {
@@ -130,6 +129,7 @@ export default {
     return {
       isError: false,
       isLoading: true,
+      filterInput: '',
       activities: [],
       filteredActivities: [],
       activitiesToShow: 10,
@@ -139,6 +139,7 @@ export default {
   },
   methods: {
     filterBtnClickHandler(typeToFilter) {
+      this.filterInput = '';
       this.selectedFilter = typeToFilter;
       this.filteredActivities = this.activities;
       if (typeToFilter !== 'all') {
@@ -146,11 +147,14 @@ export default {
           .filter(a => a.resource_type === typeToFilter);
       }
     },
-    onInputChane(e) {
+    onInputChane() {
+      if (this.selectedFilter !== 'all') {
+        this.filterBtnClickHandler('all');
+      }
       this.filteredActivities = this.activities;
       this.filteredActivities = this.filteredActivities
-        .filter(a => a.resource_type.replace(/_/g, ' ').includes(e.target.value)
-          || a.topic_data.name.includes(e.target.value));
+        .filter(a => a.resource_type.replace(/_/g, ' ').includes(this.filterInput)
+          || a.topic_data.name.includes(this.filterInput));
     },
     onShowMore() {
       this.activitiesToShow += 10;
@@ -167,6 +171,10 @@ export default {
         }
       }
       return parsedArray;
+    },
+    deleteActivity(e) {
+      this.activities = this.activities.filter(a => a.id !== e);
+      this.filteredActivities = this.filteredActivities.filter(a => a.id !== e);
     },
   },
   created() {
@@ -239,6 +247,7 @@ export default {
   margin-left: 10px;
   position: relative;
 }
+
 .border {
   display: block;
   height: 30px;
