@@ -185,8 +185,8 @@ export default {
     this.$http.get('http://localhost:3000/activities/v1')
       .then((res) => {
         this.isLoading = false;
+        // Check if V2 endpoint structure data. if it does, reformat the data.
         if (Array.isArray(res.data[0].activities)) {
-          // V2 endpoint structure support
           this.activities = this.reformatData(res.data);
         } else {
           this.activities = res.data;
