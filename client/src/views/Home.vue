@@ -157,8 +157,8 @@ export default {
       }
       this.filteredActivities = this.activities;
       this.filteredActivities = this.filteredActivities
-        .filter(a => a.resource_type.replace(/_/g, ' ').includes(this.filterInput)
-          || a.topic_data.name.includes(this.filterInput));
+        .filter(a => a.resource_type.replace(/_/g, ' ').includes(this.filterInput.toLowerCase())
+          || a.topic_data.name.includes(this.filterInput.toLowerCase()));
     },
     onShowMore() {
       this.activitiesToShow += 10;
