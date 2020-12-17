@@ -126,10 +126,14 @@ export default {
   bottom: -6px;
   right: 1px;
   cursor: pointer;
-  display: none!important;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+
 }
 .activity:hover .delete-icon {
-  display: block!important;
+  opacity: 1;
+  visibility: visible;
 }
 
 </style>
