@@ -3,27 +3,113 @@
     <b-container>
       <b-row>
         <b-col>
-          <h1 class="main-header">Activities View</h1>
-          <h2 class="secondery-header">Timeline</h2>
-          <b-form-input placeholder="Filter results"
-                        class="filter-input" type="text" v-on:keyup="onInputChane">
-          </b-form-input>
-          <section v-if="filteredActivities.length">
-            <div class="item-wrapper"  v-for="(activity,index) in filteredActivities"
-                 v-bind:key="activity.id" >
+          <div class="msg error-msg" v-if="isError">Ooops, something went wrong :(</div>
+          <div class="msg loading-msg" v-else-if="isLoading">
+            <b-icon icon="arrow-clockwise" animation="spin" font-scale="4"></b-icon>
+          </div>
+          <div v-else>
+            <h1 class="main-header">Activities View</h1>
+            <h2 class="secondery-header">Timeline</h2>
+            <section v-if="filteredActivities.length">
+
+              <b-form-input placeholder="Filter results"
+                            class="filter-input" type="text" v-on:keyup="onInputChane">
+              </b-form-input>
+
+              <h3>Filter by:</h3>
+              <div class="filter-btns">
+                <b-button variant="outline-success" class="filter-btn" size="sm"
+                          v-on:click="filterBtnClickHandler('all')">
+                  <b-icon icon="check-circle"
+                          v-bind:class="[selectedFilter === 'all' ? '' : 'd-none']">
+                  </b-icon>
+                  All work
+                </b-button>
+                <b-button variant="outline-success" class="filter-btn"
+                          size="sm" v-on:click="filterBtnClickHandler('movie')">
+                  <b-icon icon="check-circle"
+                          v-bind:class="[selectedFilter === 'movie' ? '' : 'd-none']">
+                  </b-icon>
+                  Movie
+                </b-button>
+                <b-button variant="outline-success" class="filter-btn"
+                          size="sm" v-on:click="filterBtnClickHandler('quiz')">
+                  <b-icon icon="check-circle"
+                          v-bind:class="[selectedFilter === 'quiz' ? '' : 'd-none']">
+                  </b-icon>
+                  Quiz
+                </b-button>
+                <b-button variant="outline-success" class="filter-btn"
+                          size="sm" v-on:click="filterBtnClickHandler('easy_quiz')">
+                  <b-icon icon="check-circle"
+                          v-bind:class="[selectedFilter === 'easy_quiz' ? '' : 'd-none']">
+                  </b-icon>
+                  Easy Quiz
+                </b-button>
+                <b-button variant="outline-success" class="filter-btn"
+                          size="sm" v-on:click="filterBtnClickHandler('make_a_map')">
+                  <b-icon icon="check-circle"
+                          v-bind:class="[selectedFilter === 'make_a_map' ? '' : 'd-none']">
+                  </b-icon>
+                  Make A Map
+                </b-button>
+                <b-button variant="outline-success" class="filter-btn"
+                          size="sm" v-on:click="filterBtnClickHandler('word_play')">
+                  <b-icon icon="check-circle"
+                          v-bind:class="[selectedFilter === 'word_play' ? '' : 'd-none']">
+                  </b-icon>
+                  Word Play
+                </b-button>
+                <b-button variant="outline-success" class="filter-btn"
+                          size="sm" v-on:click="filterBtnClickHandler('related_reading')">
+                  <b-icon icon="check-circle"
+                          v-bind:class="[selectedFilter === 'related_reading' ? '' : 'd-none']">
+                  </b-icon>
+                  Related Reading
+                </b-button>
+                <b-button variant="outline-success" class="filter-btn"
+                          size="sm" v-on:click="filterBtnClickHandler('challenge')">
+                  <b-icon icon="check-circle"
+                          v-bind:class="[selectedFilter === 'challenge' ? '' : 'd-none']">
+                  </b-icon>
+                  Challenge
+                </b-button>
+                <b-button variant="outline-success" class="filter-btn"
+                          size="sm" v-on:click="filterBtnClickHandler('draw_about_it')">
+                  <b-icon icon="check-circle"
+                          v-bind:class="[selectedFilter === 'draw_about_it' ? '' : 'd-none']">
+                  </b-icon>
+                  Draw About It
+                </b-button>
+
+
+              </div>
+              <div class="item-wrapper" v-for="(activity,index) in filteredActivities"
+                   v-bind:key="activity.id">
               <span class="month" v-if=" index === 0 ||
               new Date(filteredActivities[index - 1].d_created * 1000).getMonth()
               !== new Date(activity.d_created * 1000).getMonth()
               && index < activitiesToShow">
-                {{ new Date(activity.d_created * 1000) |
-                moment('MMMM') }}</span>
+                <span class="border" v-if="index !== 0"></span>
+                {{
+                  new Date(activity.d_created * 1000) |
+                    moment('MMMM')
+                }}</span>
 
-              <div class="activity" v-if="index < activitiesToShow">
-                <Activity  v-bind:activity="activity" />
+                <div class="activity" v-if="index < activitiesToShow">
+                  <Activity v-bind:activity="activity"/>
+                </div>
+                <span class="load-more"
+                      v-if="index === activitiesToShow - 1 && index < filteredActivities.length"
+                      v-on:click="onShowMore"
+                      pill variant="primary">
+              <b-icon icon="chevron-down"></b-icon>
+              Load more
+            </span>
               </div>
-            </div>
-            <b-button v-on:click="onShowMore" pill variant="primary">Load more</b-button>
-          </section>
+
+            </section>
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -42,21 +128,32 @@ export default {
   },
   data() {
     return {
+      isError: false,
+      isLoading: true,
       activities: [],
       filteredActivities: [],
-      activitiesToShow: 5,
+      activitiesToShow: 10,
       monthDisplay: -1,
+      selectedFilter: 'all',
     };
   },
   methods: {
+    filterBtnClickHandler(typeToFilter) {
+      this.selectedFilter = typeToFilter;
+      this.filteredActivities = this.activities;
+      if (typeToFilter !== 'all') {
+        this.filteredActivities = this.filteredActivities
+          .filter(a => a.resource_type === typeToFilter);
+      }
+    },
     onInputChane(e) {
       this.filteredActivities = this.activities;
       this.filteredActivities = this.filteredActivities
         .filter(a => a.resource_type.replace(/_/g, ' ').includes(e.target.value)
-            || a.topic_data.name.includes(e.target.value));
+          || a.topic_data.name.includes(e.target.value));
     },
     onShowMore() {
-      this.activitiesToShow += 5;
+      this.activitiesToShow += 10;
     },
     parseData(data) {
       const parsedArray = [];
@@ -73,38 +170,61 @@ export default {
     },
   },
   created() {
-    this.$http.get('http://localhost:3000/activities/v2')
+    this.$http.get('http://localhost:3000/activities/v1')
       .then((res) => {
+        this.isLoading = false;
         if (Array.isArray(res.data[0].activities)) {
-          // V2 endpoint data
+          // V2 endpoint structure support
           this.activities = this.parseData(res.data);
         } else {
           this.activities = res.data;
         }
-        console.log(this.activities);
         // eslint-disable-next-line no-nested-ternary
         this.activities.sort((a, b) => (a.d_created > b.d_created ? 1
           : (a.d_created < b.d_created) ? -1 : 0));
         this.filteredActivities = [...this.activities];
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log('errr');
+        this.isError = true;
       });
-    // .catch(err => console.log(err));
   },
 };
 </script>
 
 <style scoped>
+.msg {
+  text-align: center;
+  margin-top: 50vh;
+}
+
+.error-msg {
+  color: red;
+}
 
 .main-header {
   margin-top: 40px;
   font-weight: bold;
   letter-spacing: -0.5px;
 }
+
 .secondery-header {
   margin-top: 25px;
 }
+
 .filter-input {
   width: 25%;
   margin-bottom: 15px;
+}
+
+.filter-btns {
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  margin-right: 10px;
+
 }
 
 .month {
@@ -119,8 +239,8 @@ export default {
   margin-left: 10px;
   position: relative;
 }
-.month:before {
-  content: '';
+.border {
+  display: block;
   height: 30px;
   width: 2px;
   position: absolute;
@@ -128,8 +248,12 @@ export default {
   left: 50px;
   background-color: #DBDBDB;
 }
+
+
 .item-wrapper:first-child .month:before {
   content: unset;
+  background-color: red;
+
 }
 
 .activity {
@@ -139,14 +263,24 @@ export default {
   padding: 15px;
   position: relative;
 }
+
 .activity:before {
   position: absolute;
   top: -30px;
-  left: 55px;  display: inline-block;
+  left: 55px;
+  display: inline-block;
   content: '';
   width: 2px;
   height: 30px;
   background-color: #DBDBDB;
+}
+
+.load-more {
+  display: block;
+  cursor: pointer;
+  color: #00CCCB;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 </style>
